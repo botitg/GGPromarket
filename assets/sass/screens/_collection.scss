@@ -1,0 +1,67 @@
+.collection {
+    padding: 60px 0;
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 45px;
+        align-items: flex-start;
+        &__title {
+            @include title(700, $black);
+            position: relative;
+            &::before {
+                width: 100%;
+                height: 2px;
+                background: $blue;
+                content: '';
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+            }
+        }
+        &__wrapper {
+            display: grid;
+            grid-template-columns: 300px 300px 240px 240px 240px;
+            grid-template-rows: 250px 250px;
+            grid-template-areas:
+                'img img toilet span span '
+                'img img just kit kit ';
+            gap: 30px;
+            .left {
+                grid-area: img;
+                position: relative;
+                &__wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                    position: absolute;
+                    bottom: 50px;
+                    left: 0;
+                    &__title {
+                        @include content(700, $white);
+                        padding: 15px 25px;
+                        background-color: #3bb9b8cc;
+                    }
+                    &__name {
+                        @include text(400, $white);
+                        margin-left: 10px;
+                    }
+                }
+            }
+            .right {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                &__up {
+                    display: flex;
+                    gap: 20px;
+                    .card:nth-child(1) {
+                        grid-area: toilet;
+                    }
+                    .card:nth-child(2) {
+                        grid-area: span;
+                    }
+                }
+            }
+        }
+    }
+}

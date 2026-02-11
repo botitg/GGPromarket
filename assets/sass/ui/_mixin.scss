@@ -1,0 +1,17 @@
+@mixin title($weight, $color) {
+    font-weight: $weight;
+    color: $color;
+    font-size: 36px;
+}
+@mixin text($weight, $color) {
+    font-weight: $weight;
+    color: $color;
+    font-size: 16px;
+}
+
+@mixin content($weight, $color) {
+    font-weight: $weight;
+    color: $color;
+    font-size: 22px;
+}
+
